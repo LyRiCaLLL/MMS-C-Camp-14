@@ -1,0 +1,7 @@
+ex1
+./maxNum < numbers
+ex 2
+.....
+ex3
+cat numbers |sort -h
+cat numvers |sort -ur
