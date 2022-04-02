@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+#include <assert.h>
+#include <string.h>
+ 
+#define NAMELEN 10
+#define COUNT 10
+ 
+
+ 
+ 
+typedef struct {
+    char books [NAMELEN];
+    double pages;
+    double price;
+} bookOfBooks;
+ 
+double prices(double min, double max){
+    return min + ((double)rand() / RAND_MAX) * (max - min);
+}
+ 
+int pagess(int min, int max){
+    return min + rand() % (max -min + 1); // [min; max]
+}
+ int name(int min, int max){
+    return min + rand() % (max -min + 1); // [min; max]
+}
+
+
+ 
+int main(){
+    srand(time(NULL));
+    bookOfBooks; points[COUNT];
+    char book[][100]={
+        "Evil Under the sun"
+        ,"The Appeal"
+        ,"Agatha Raisin and the Quiche of Death "
+        ,"Strong Poison"
+        ,"Brat Farrar"
+        ,"Magpie Murders"
+        ,"The Thursday Murder Club"
+        ,"Three pines"
+        ,"Hollywood Homicide"
+        ,"Murder Most Unladylike"
+    };
+    char By[][100]={"Agatha Christie",
+    "Janice Hallett"
+    ,"MC Beaton"
+    ,"Dorothy L Sayers"
+    ,"Josephine Tey"
+    ,"Anthony Horowitz"
+    ,"Richard Osman"
+    ,"Louise Penny"
+    ,"Kellye Garrett"
+    ,"Robin Stevens"};
+    for (int i = 0; i < COUNT; i++){
+        points[i].pages = pagess(5, 2000);
+        points[i].price = prices(1, 1000);
+        
+    }
+ 
+    for (int i = 0; i < COUNT; i++){
+        printf("Book - %s by %s |pages - %.1lf |price - %.1lf\n", book[i], By[i], points[i].pages, points[i].price);
+    }
+ 
+    return 0;
+}
